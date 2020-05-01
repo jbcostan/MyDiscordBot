@@ -1,0 +1,10 @@
+MyDiscordBot/bin/*
+MyDiscordBot/obj/*
+*.v2
+*.dll
+*.sln
+*.json
+*.txt
+.vs/MyDiscordBot/v16/.suo
+MyDiscordBot/obj/Debug/netcoreapp3.1/MyDiscordBot.AssemblyInfo.cs
+MyDiscordBot/MyDiscordBot.csproj
