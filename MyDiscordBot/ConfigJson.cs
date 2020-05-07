@@ -10,7 +10,12 @@ namespace MyDiscordBot
     { 
         [JsonProperty("token")]
         public string Token { get; private set; }
+
         [JsonProperty("prefix")]
         public string Prefix { get; private set; }
+
+        [JsonProperty("riotkey")]
+        public string RiotKey { get; private set; }
+
     }
 }

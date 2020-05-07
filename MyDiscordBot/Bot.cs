@@ -8,21 +8,26 @@ using System.IO;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using MyDiscordBot.Commands;
+using System.Security.Cryptography.X509Certificates;
 
 namespace MyDiscordBot
 {
-    public class Bot
+
+    public class Bot 
     {
         public DiscordClient Client { get; private set; }
         public CommandsNextExtension Commands { get; private set; }
+        //public string RiotApiKey { get; private set; }
 
         public async Task RunAsync()
         {
             var json = string.Empty;
             using (var fs = File.OpenRead("config.json"))
             using (var sr = new StreamReader(fs, new UTF8Encoding(false)))
-                json = await sr.ReadToEndAsync().ConfigureAwait(false);
+            json = await sr.ReadToEndAsync().ConfigureAwait(false);
             var configJson = JsonConvert.DeserializeObject<ConfigJson>(json);
+            
+            
             var config = new DiscordConfiguration
             {
                 Token = configJson.Token,
